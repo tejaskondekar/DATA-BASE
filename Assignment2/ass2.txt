@@ -1,0 +1,21 @@
+Assignment –2
+
+
+1)	Which field of the Customers table is the primary key?
+Ans: Cnum field of the Customers table is the primary key.
+
+2)	What is the 4th column of the Customers table? 
+   Ans: Rating is the 4th column of the Customers table.
+
+ 3)   What is another word for row? For column? 
+   Ans: Another words for Row is Tuple, Entity, Opportunity. Another words for Column is     Attribute ,Method.
+
+4)Why isn’t it possible to see the first five rows of a table?
+Ans: 
+•	When you select  a table the order of rows in the output, depends on the row address.
+•	It will always be in Ascending order of row address.
+•	When you update a row if the row length is increasing then the entire may be moved to some other address.
+•	Later when you select from table you will find the row at some other position in Output.
+•	Its only in the case of varchar that the row length may increase or decrease.
+Hence it is not possible to view the first and last ‘N’ rows of table.
+
