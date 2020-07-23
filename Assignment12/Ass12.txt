@@ -1,0 +1,37 @@
+										#ASSIGNMENT12
+
+
+
+
+QUESTION:1
+
+==>	SELECT * FROM CUSTOMERS
+	WHERE Rating >=ANY
+	(SELECT Rating FROM CUSTOMERS 
+	WHERE Snum IN(SELECT Snum FROM SALESPEOPLE WHERE Sname='Serres'));  
+
+=============================================================================================================================================================================
+QUESTION:2
+
+==>	SELECT Snum FROM SALESPEOPLE 
+	WHERE (Snum,City) 
+	NOT IN (SELECT Snum,City FROM CUSTOMERS); 
+
+=============================================================================================================================================================================
+     
+QUESTION:3
+
+==>	SELECT * FROM ORDERS 
+	WHERE  Amt> ANY (SELECT Amt FROM ORDERS 
+	WHERE Cnum IN (SELECT Cnum FROM CUSTOMERS WHERE City='London'));
+
+=============================================================================================================================================================================
+QUESTION:4
+
+==>	SELECT * FROM ORDERS
+	WHERE Amt>
+    	(SELECT MIN(Amt)
+     	FROM CUSTOMERS
+     	NATURAL JOIN ORDERS
+     	WHERE city='London');
+=============================================================================================================================================================================

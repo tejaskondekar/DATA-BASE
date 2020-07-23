@@ -1,0 +1,20 @@
+ 										#ASSIGNMENT11
+     
+
+
+
+QUESTION:1
+
+==>	SELECT Onum as 'All Orders' FROM ORDERS 
+     	WHERE Cnum=(SELECT Cnum FROM CUSTOMERS WHERE Cname='Cisneros');
+=============================================================================================================================================================================     
+QUESTION:2
+
+==>	SELECT Cname,Rating,Cnum FROM CUSTOMERS
+    	WHERE Cnum IN(SELECT Cnum FROM ORDERS WHERE Amt>(SELECT Avg(Amt) FROM ORDERS));
+=============================================================================================================================================================================          
+QUESTION:3
+
+==>	SELECT SUM(Amt) FROM ORDERS
+     	GROUP BY Snum HAVING SUM(Amt)>(SELECT MAX(AMT)FROM ORDERS);
+=============================================================================================================================================================================     
