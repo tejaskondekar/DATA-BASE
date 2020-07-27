@@ -1,0 +1,39 @@
+ 								#ASSIGNMENT13
+      
+
+
+QUESTION:1
+
+==>	SELECT Cname,City,'High Rating'Rating
+	From CUSTOMERS
+	WHERE Rating>=200
+	UNION 
+	SELECT Cname,City,'Low Rating'Rating
+	FROM CUSTOMERS
+	WHERE Rating<200;
+========================================================================================================================
+QUESTION:2
+
+==>	SELECT Sname,Snum,Cname
+	FROM SALESPEOPLE
+	JOIN CUSTOMERS USING(Snum)
+	WHERE Snum IN
+   	 (SELECT Snum
+    	FROM CUSTOMERS
+     	GROUP BY Snum
+     	HAVING COUNT(Snum)>1)
+	ORDER BY Sname,Cname;
+========================================================================================================================
+QUESTION:3
+
+==>	SELECT Snum
+	FROM SALESPEOPLE
+	WHERE City='san jose'
+	UNION
+	SELECT DISTINCT Snum
+	FROM ORDERS
+	WHERE Snum IN
+  	(SELECT Snum
+     	FROM ORDERS
+     	WHERE Odate LIKE '03-OCT-%');
+========================================================================================================================
