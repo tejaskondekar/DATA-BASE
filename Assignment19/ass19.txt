@@ -1,0 +1,33 @@
+											Assignment – 19
+
+
+1)QUESTION
+==>	CREATE VIEW highest_rated_customer AS
+	SELECT * FROM customers
+	WHERE rating=(SELECT max(rating) FROM customers);
+	select * from highest_rated_customer;
+==============================================================================================================================================================================
+2)QUESTION
+==>	CREATE VIEW NoOfsalespeople_city AS
+	SELECT city,count(city) "NO OF SALESPEOPLE"
+	FROM salespeople
+	GROUP BY city;
+	select * from NoOfsalespeople_city;
+
+==============================================================================================================================================================================
+3)QUESTION
+==>	CREATE VIEW Avg_totalOrder_salesperson AS
+	SELECT sname,avg(onum) AVERAGE,count(onum) "TOTAL ORDERS"
+	FROM salespeople
+	JOIN orders using(snum)
+	GROUP BY sname;
+	select * from Avg_totalOrder_salesperson;
+
+==============================================================================================================================================================================
+4)QUESTION
+==>	CREATE VIEW multiple_customer AS
+	SELECT sname,cname
+	FROM salespeople
+	JOIN customers USING (snum);
+	select * from multiple_customer;
+==============================================================================================================================================================================

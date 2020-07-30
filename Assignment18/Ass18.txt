@@ -1,0 +1,17 @@
+									Assignment – 18
+
+
+1)QUESTION
+==>	CREATE TABLE cityorders as
+	SELECT onum,amt,orders.Snum,Customers,cnum,city from orders,customers
+	where orders,cnum=customers.cnum;
+	ALTER TABLE cityorders ADD PRIMARY KEY (Onum);
+	DESC cityorders;
+==============================================================================================================================================
+2) QUESTION
+==>	ALTER TABLE cityorders add column prev int;
+	ALTER TABLE cityorders ADD
+	FOREIGN key(prev) REFERENCES cityorders(onum); 
+	ALTER TABLE cityorders ADD
+	FOREIGN key(Cnum) REFERENCES customers(Cnum); 
+======================================================================================================================================================
